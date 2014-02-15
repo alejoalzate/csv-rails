@@ -18,10 +18,17 @@
         <td><%= course.course_id %></td>
         <td><%= course.course_name %></td>
         <td><%= course.state %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <tr>
+        <table>
+          <% course.get_active_students.each do |student| %>
+          <tr>
+            <td><%= student.user_id %></td>
+            <td><%= student.user_name %></td>
+            <td><%= student.state %></td>
+          </tr>
+          <% end %>
+        </table>
     <% end %>
   </tbody>
 </table>
