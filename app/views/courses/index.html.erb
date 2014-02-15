@@ -20,12 +20,12 @@
         <td><%= course.state %></td>
       </tr>
       <tr>
-        <table>
+        <table bgcolor="#00FF00">
           <% course.get_active_students.each do |student| %>
-          <tr>
-            <td><%= student.user_id %></td>
-            <td><%= student.user_name %></td>
-            <td><%= student.state %></td>
+            <tr>
+              <td><%= student.user_id %></td>
+              <td><%= student.user_name %></td>
+              <td><%= student.state %></td>
           </tr>
           <% end %>
         </table>
